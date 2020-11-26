@@ -1,0 +1,156 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Ciclos</h2>
+
+@for (int i = 0; i < 5; i++)
+{
+    {<p>Linea #@i en un For </p>}
+{<h3>Test</h3>}
+
+}
+
+<hr />
+<h3>While</h3>
+@{
+    var j = 0;
+    while (j < 5)
+    {
+        j += 1;
+        <p> Linea @j </p>
+    }
+
+}
+
+@{
+    string[] members = { "Juan", "Julio", "Sergio", "Yaritza", "Perla", "Samara", "Luis" };
+
+    int longitud = members.Length;
+
+    foreach (var persona in members)
+    {
+        <h5>@persona</h5>
+    }
+
+    <p> El tamaño del arreglo es @longitud</p>
+}
+
+@{
+    int Entero;
+    float PuntoFlotante;
+    string Cadena;
+    decimal NumerosDecimales;
+    bool Boleanos;
+    var contador = 10;
+
+}
+
+&& 	AND
+||	OR
+! 	NOT
+== 	IGUAL
+!=	DESIGUAL
+<	MENOR QUE
+> 	MAYOR QUE
+<=	MENOR O IGUAL QUE
+>=	MAYOR O IGUAL QUE
++ 	CONCATENACION
+
+
+@{var precio = 219;}
+
+@if (precio > 30)
+{
+    <p>El precio es muy alto</p>
+}
+else if (precio > 20 && precio < 30)
+{
+    <p>El precio esta bien.</p>
+}
+else
+{
+    <p>El precio es muy bajo.</p>
+}
+
+@{
+    var diaSemana = DateTime.Now.DayOfWeek;
+    var dia = diaSemana.ToString();
+    var mensaje = "";
+
+    @dia;
+}
+
+@switch (dia)
+{
+    case "Monday":
+        mensaje = "Hoy es lunes";
+        break;
+    case "Tuesday":
+        mensaje = "Hoy es martes";
+        break;
+    case "Wednesday":
+        mensaje = "Hoy es Miercoles";
+        break;
+    default:
+        mensaje = " Hoy es " + dia;
+        break;
+}
+
+<h2>@mensaje</h2>
+
+
+La hora actual es : + @DateTime.Now.ToString("T");
+<br />
+La Fecha de hoy : + @DateTime.Now.ToString("yyyy - MM - dd");
+<br />
+La Fecha de hoy : + @DateTime.Now.ToString("yyyy/MM/dd");
+
+<p></p>
+
+<form method="POST" asp-controller="home" asp-action="index">
+    <input type="text" id="nombre" name="nombreTest" readonly />
+    <input type="text" id="fecha" name="fecha" value="@DateTime.Now.ToString("yyyy - MM - dd")" />
+    <input type="text" id="nombre3" name="nombreTest3" />
+    <input type="password" id="pass01" name="pass01" />
+    <input type="date" id="dateTimeInput" name="dateTimeInput" />
+    <input type="datetime" id="dateTimeInput" name="dateTimeInput" />
+    <input type="datetime-local" id="dateTimeInput" name="dateTimeInput" />
+    <input type="file" id="archivo" name="archivo" accept="image/x-png,image/gif,image/jpeg" />
+    <textarea>
+           Aqui ponemos info 
+    </textarea>
+    <input type="submit" value="Enviar" />
+</form>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <span>Hola Mundo!!!</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-5">
+            <span>Hola Mundo!!!</span>
+        </div>
+        <div class="col-lg-3">
+            <span>Hola Mundo!!!</span>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+        <div class="w-100"></div>
+        <div class="col">Column</div>
+        <div class="col">Column</div>
+    </div>
+</div>
